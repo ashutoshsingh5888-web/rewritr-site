@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using regex in your browser to rewrite dynamic content — Rewritr Blog</title>
+  <meta name="description" content="Learn how to use regular expressions in Rewritr to match patterns, use capture groups, and rewrite dynamic content in any webpage." />
+  <link rel="canonical" href="https://rewritr.app/blog/regex-browser-text-replacement.html" />
+  <meta property="og:title" content="Using regex in your browser to rewrite dynamic content" />
+  <meta property="og:description" content="Regex isn't just for developers. This guide demystifies capture groups and substitution patterns for real browsing tasks." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rewritr.app/blog/regex-browser-text-replacement.html" />
+  <meta name="author" content="Ashutosh Kumar Singh" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Using regex in your browser to rewrite dynamic content",
+    "description": "How to use regex mode in Rewritr for pattern-based text replacement in the browser.",
+    "author": { "@type": "Person", "name": "Ashutosh Kumar Singh" },
+    "publisher": { "@type": "Organization", "name": "Rewritr", "url": "https://rewritr.app" },
+    "datePublished": "2025-02-10",
+    "dateModified": "2025-04-01",
+    "mainEntityOfPage": "https://rewritr.app/blog/regex-browser-text-replacement.html"
+  }
+  </script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding: 60px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+    .blog-back { font-size: 13px; color: var(--text3); display: inline-flex; align-items: center; gap: 5px; margin-bottom: 24px; transition: color 0.15s; }
+    .blog-back:hover { color: var(--text2); }
+    .blog-byline { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .blog-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,var(--accent),var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: #fff; flex-shrink: 0; }
+    .blog-byline-info p { font-size: 13px; color: var(--text3); }
+    .blog-byline-info strong { font-size: 14px; color: var(--text); }
+    .copy-btn { position: absolute; top: 10px; right: 10px; background: var(--surface); border: 1px solid var(--border2); color: var(--text2); border-radius: 6px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+    .copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .tip { background: rgba(67,233,123,0.07); border: 1px solid rgba(67,233,123,0.2); border-radius: var(--radius); padding: 14px 18px; margin: 20px 0; font-size: 14px; color: var(--text2); line-height: 1.6; }
+    .tip strong { color: #43e97b; }
+    .warn { background: rgba(255,184,0,0.07); border: 1px solid rgba(255,184,0,0.2); border-radius: var(--radius); padding: 14px 18px; margin: 20px 0; font-size: 14px; color: var(--text2); line-height: 1.6; }
+    .warn strong { color: #ffba00; }
+    .example-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+    .example-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); padding: 8px 12px; border-bottom: 1px solid var(--border2); }
+    .example-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text2); vertical-align: top; }
+    .example-table td:first-child, .example-table td:nth-child(2) { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+    .post-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text2); }
+    .post-nav a { transition: color 0.15s; }
+    .post-nav a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto">
+
+      <div class="blog-hero">
+        <a href="/blog/" class="blog-back">← All posts</a>
+        <div style="display:flex;gap:10px;margin-bottom:16px">
+          <span class="tag">Tutorial</span>
+          <span class="tag">Regex</span>
+        </div>
+        <h1 style="font-size:clamp(28px,5vw,44px);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px">Using regex in your browser to rewrite dynamic content</h1>
+        <p style="font-size:17px;color:var(--text2);line-height:1.65;max-width:620px;font-weight:300">Regex isn't just for developers. This guide demystifies capture groups and substitution patterns for real, everyday browsing tasks — no prior experience needed.</p>
+        <div class="blog-byline">
+          <div class="blog-avatar">AK</div>
+          <div class="blog-byline-info">
+            <strong>Ashutosh Kumar Singh</strong>
+            <p>February 10, 2025 · 7 min read</p>
+          </div>
+        </div>
+      </div>
+
+      <article class="prose">
+        <p>Regular expressions — regex — have a reputation for being intimidating. And to be fair, something like <code>(?&lt;![\p{L}\p{N}_])(\w+)(?![\p{L}\p{N}_])</code> does look like keyboard mash. But for the kinds of replacements most people actually need in a browser, regex is simple and enormously powerful.</p>
+
+        <p>Rewritr supports full Unicode-aware regex in every rule. This guide walks from zero to practical patterns.</p>
+
+        <h2>Enabling regex mode</h2>
+        <p>To activate regex for a rule, click the <strong>Rx</strong> button on that row. The phrase input turns yellow — that's your visual signal that the field is now interpreted as a pattern, not a literal string.</p>
+
+        <div class="warn"><strong>Note:</strong> Invalid regex patterns are highlighted in red. They are silently skipped at apply time, so a broken pattern won't crash other rules.</div>
+
+        <h2>The basics: matching patterns instead of fixed text</h2>
+        <p>In literal mode, Rewritr searches for the exact string you type. In regex mode, you describe a <em>pattern</em> of characters to match.</p>
+
+        <p>The most useful basic building blocks:</p>
+        <ul>
+          <li><code>\d</code> — any digit (0–9)</li>
+          <li><code>\d+</code> — one or more digits</li>
+          <li><code>\d{4}</code> — exactly four digits</li>
+          <li><code>[A-Z]</code> — any uppercase letter</li>
+          <li><code>.</code> — any single character</li>
+          <li><code>.*</code> — zero or more of any character (greedy)</li>
+          <li><code>cat|dog</code> — either "cat" or "dog"</li>
+        </ul>
+
+        <p>Example: replace all US-style phone numbers with a redacted placeholder:</p>
+        <pre><code>Pattern:     \d{3}[-.\s]\d{3}[-.\s]\d{4}
+Replace:     [REDACTED]</code></pre>
+        <p>This matches <code>555-867-5309</code>, <code>555.867.5309</code>, and <code>555 867 5309</code> equally.</p>
+
+        <h2>Capture groups: rearranging text</h2>
+        <p>This is where regex becomes genuinely magical for browser use. Wrap part of your pattern in <code>( )</code> to create a <em>capture group</em>, then reference it in the replacement as <code>$1</code>, <code>$2</code>, and so on.</p>
+
+        <p><strong>Example: convert date formats</strong></p>
+        <p>American websites display dates as <code>MM/DD/YYYY</code>. If you prefer the ISO format <code>YYYY-MM-DD</code>:</p>
+        <pre><code>Pattern:     (\d{2})/(\d{2})/(\d{4})
+Replace:     $3-$1-$2
+Example:     03/15/2025  →  2025-03-15</code></pre>
+        <p>Three capture groups: <code>$1</code> = month, <code>$2</code> = day, <code>$3</code> = year. The replacement just rearranges them.</p>
+
+        <p><strong>Example: anonymise email addresses</strong></p>
+        <pre><code>Pattern:     ([\w.+-]+)@([\w-]+\.[a-z]{2,})
+Replace:     ***@$2
+Example:     john.doe@example.com  →  ***@example.com</code></pre>
+
+        <p><strong>Example: expand abbreviations</strong></p>
+        <pre><code>Pattern:     \bAPI\b
+Replace:     API (Application Programming Interface)
+</code></pre>
+
+        <h2>Practical patterns for everyday browsing</h2>
+
+        <table class="example-table">
+          <thead><tr><th>Pattern</th><th>Replace</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>\$(\d+)</td><td>₹$1</td><td>Convert USD amounts to INR symbol (for re-labelling, not conversion)</td></tr>
+            <tr><td>(\d+)px</td><td>$1rem</td><td>Convert pixel values to rem on CSS docs</td></tr>
+            <tr><td>https?://\S+</td><td>[link]</td><td>Redact all URLs for clean screenshots</td></tr>
+            <tr><td>\b(he|him|his)\b</td><td>they/them</td><td>Replace gendered pronouns (add Sc flag for capitalisation)</td></tr>
+            <tr><td>(\d{4})-(\d{2})-(\d{2})</td><td>$3/$2/$1</td><td>Reformat ISO dates to DD/MM/YYYY</td></tr>
+            <tr><td>\bTODO\b</td><td>⚠ TODO</td><td>Highlight to-do items in code documentation</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Using $0 — the full match reference</h2>
+        <p>In addition to numbered capture groups, <code>$0</code> always refers to the entire matched string. Useful for wrapping text:</p>
+        <pre><code>Pattern:     \b[A-Z]{2,}\b
+Replace:     [$0]
+Example:     The CEO and CFO met  →  The [CEO] and [CFO] met</code></pre>
+
+        <h2>Flags that interact with regex</h2>
+        <ul>
+          <li><strong>Cs (Case Sensitive)</strong> — by default, Rewritr's regex is case-insensitive (<code>i</code> flag). Enable Cs to remove the <code>i</code> flag and match case exactly.</li>
+          <li><strong>Sc (Smart Case)</strong> — also works with regex. The replacement will mirror the capitalisation of each match.</li>
+          <li><strong>Ww (Whole Word)</strong> — disabled in regex mode. Use explicit boundary assertions instead: <code>(?&lt;![\p{L}\p{N}_])</code> before and <code>(?![\p{L}\p{N}_])</code> after your pattern.</li>
+        </ul>
+
+        <h2>Unicode regex — it just works</h2>
+        <p>Rewritr compiles all patterns with the <code>u</code> (Unicode) flag, which enables Unicode property escapes. This means you can write patterns that work correctly across scripts:</p>
+        <pre><code>Pattern:     \p{Script=Devanagari}+
+Replace:     [Hindi text]
+</code></pre>
+        <p>This matches any run of Devanagari characters — something that's impossible with ASCII regex.</p>
+
+        <div class="tip"><strong>Testing tip:</strong> Use <a href="https://regex101.com" target="_blank" rel="noopener">regex101.com</a> to test and debug patterns before pasting them into Rewritr. Select the "ECMAScript" flavour and enable the Unicode flag to match Rewritr's exact behaviour.</div>
+
+        <h2>Summary</h2>
+        <p>Regex mode in Rewritr gives you pattern matching, capture groups for rearranging text, and full Unicode support — in a UI that takes seconds to use. Start with a simple pattern like <code>\d+</code> to match numbers, and build up from there. The most powerful patterns don't have to be long or complex.</p>
+
+        <p><a href="https://rewritr.app/#install">Try Rewritr free</a> — regex mode is included in the free tier.</p>
+
+        <div class="post-nav">
+          <a href="bulk-replace-text-browser.html">← Bulk replace without coding</a>
+          <a href="best-text-replacement-extensions-2025.html">Best extensions in 2025 →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="nav-logo" style="display:inline-flex"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a><p>Smart text replacement for your browser.</p></div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ashutosh Kumar Singh.</span><span>rewritr.app</span></div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

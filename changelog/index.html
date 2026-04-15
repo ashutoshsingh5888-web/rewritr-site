@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog — Rewritr</title>
+  <meta name="description" content="Rewritr version history and release notes. See what's new, what's fixed, and what's coming next." />
+  <link rel="canonical" href="https://rewritr.app/changelog/" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .changelog { max-width: 720px; margin: 0 auto; padding: 60px 0 80px; }
+    .release { display: grid; grid-template-columns: 180px 1fr; gap: 32px; margin-bottom: 56px; }
+    .release-meta { padding-top: 2px; }
+    .release-version {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .release-date { font-size: 13px; color: var(--text3); margin-top: 4px; }
+    .release-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .release-body h3 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .release-body p { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 14px; }
+    .change-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .change-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.55;
+    }
+    .change-type {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    .ct-new { background: rgba(67,233,123,0.12); color: #43e97b; }
+    .ct-fix { background: rgba(255,184,0,0.1); color: #ffba00; }
+    .ct-imp { background: rgba(108,99,255,0.12); color: #a89fff; }
+    .ct-break { background: rgba(255,107,107,0.12); color: #ff6b6b; }
+    .divider { border: none; border-top: 1px solid var(--border); margin-bottom: 56px; }
+    @media (max-width: 640px) {
+      .release { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/changelog/" class="active">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container">
+    <div class="changelog">
+      <div class="section-label">Changelog</div>
+      <h1 class="section-title" style="margin-bottom:8px">What's <em>new</em></h1>
+      <p class="section-sub" style="margin-bottom:56px">Every update, fix, and improvement — most recent first.</p>
+
+      <!-- v1.1.0 -->
+      <article class="release" aria-labelledby="v110">
+        <div class="release-meta">
+          <div class="release-version" id="v110">v1.1.0</div>
+          <div class="release-date">April 2025</div>
+          <div class="release-tags">
+            <span class="badge badge-green">Latest</span>
+          </div>
+        </div>
+        <div class="release-body">
+          <h3>Bookmarks, contenteditable toggle &amp; keyboard shortcut</h3>
+          <p>This release adds three highly-requested features: saved rule sets, a proper contenteditable-only mode, and a global keyboard shortcut.</p>
+          <ul class="change-list">
+            <li><span class="change-type ct-new">New</span> Bookmark panel — save, name, load, and delete rule sets from the 🔖 button in the header.</li>
+            <li><span class="change-type ct-new">New</span> "Replace only in contenteditable" toggle — when on, Rewritr exclusively targets editable fields (Google Docs, Notion, email composers) and leaves static page text untouched.</li>
+            <li><span class="change-type ct-new">New</span> Keyboard shortcut <kbd>Alt+Shift+F</kbd> to open the popup from any tab.</li>
+            <li><span class="change-type ct-fix">Fix</span> Previous "Replace in contenteditable" toggle was additive (not exclusive) — it was replacing text everywhere instead of only in editable areas. Now correctly restricts scope when toggled on.</li>
+            <li><span class="change-type ct-imp">Imp</span> Bookmarks are included in Import/Export JSON.</li>
+            <li><span class="change-type ct-imp">Imp</span> Dynamic mode MutationObserver now also respects the contenteditable-only restriction.</li>
+            <li><span class="change-type ct-imp">Imp</span> Migrates older <code>skipRich</code> storage key to the new <code>replaceRich</code> flag automatically.</li>
+          </ul>
+        </div>
+      </article>
+      <hr class="divider" />
+
+      <!-- v1.0.0 -->
+      <article class="release" aria-labelledby="v100">
+        <div class="release-meta">
+          <div class="release-version" id="v100">v1.0.0</div>
+          <div class="release-date">March 2025</div>
+        </div>
+        <div class="release-body">
+          <h3>Initial release</h3>
+          <p>Rewritr launches as a free Chrome extension for find-and-replace on any webpage.</p>
+          <ul class="change-list">
+            <li><span class="change-type ct-new">New</span> Unlimited find-and-replace rules per session.</li>
+            <li><span class="change-type ct-new">New</span> Four per-rule flags: Case Sensitive (Cs), Regex (Rx), Whole Word (Ww), Smart Case (Sc).</li>
+            <li><span class="change-type ct-new">New</span> Unicode-aware regex with capture group support (<code>$1</code>, <code>$2</code>, <code>$0</code>).</li>
+            <li><span class="change-type ct-new">New</span> Unicode word boundary matching using <code>\p{L}</code> / <code>\p{N}</code> (works correctly for non-ASCII scripts).</li>
+            <li><span class="change-type ct-new">New</span> Smart case — mirrors capitalisation pattern of matched text onto replacement.</li>
+            <li><span class="change-type ct-new">New</span> Dynamic mode — MutationObserver keeps replacements active as new content loads.</li>
+            <li><span class="change-type ct-new">New</span> Skip <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag options.</li>
+            <li><span class="change-type ct-new">New</span> Works inside <code>contenteditable</code>, <code>input[type=text]</code>, and <code>textarea</code> elements.</li>
+            <li><span class="change-type ct-new">New</span> Import and Export rules as JSON.</li>
+            <li><span class="change-type ct-new">New</span> Rules persist across sessions via <code>chrome.storage.sync</code>.</li>
+            <li><span class="change-type ct-new">New</span> 100% local — no network access, no telemetry.</li>
+          </ul>
+        </div>
+      </article>
+      <hr class="divider" />
+
+      <!-- Roadmap -->
+      <section aria-labelledby="roadmap">
+        <h2 id="roadmap" style="font-size:22px;font-weight:500;letter-spacing:-0.02em;margin-bottom:16px">Coming up</h2>
+        <ul class="change-list">
+          <li><span class="change-type ct-new">Soon</span> Per-domain rule profiles — automatically apply different rule sets on different sites.</li>
+          <li><span class="change-type ct-new">Soon</span> Cloud sync across devices (Pro).</li>
+          <li><span class="change-type ct-new">Planned</span> Drag-to-reorder rules.</li>
+          <li><span class="change-type ct-new">Planned</span> Firefox / Edge support.</li>
+          <li><span class="change-type ct-new">Planned</span> One-click rule sharing via URL.</li>
+        </ul>
+        <p style="margin-top:20px;font-size:14px;color:var(--text2)">Want to suggest a feature? <a href="mailto:ashutoshsingh5888@gmail.com?subject=Rewritr Feature Request" style="color:var(--accent)">Send us your idea.</a></p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="nav-logo" style="display:inline-flex"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a><p>Smart text replacement for your browser.</p></div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ashutosh Kumar Singh.</span><span>rewritr.app</span></div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

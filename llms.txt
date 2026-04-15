@@ -1,0 +1,43 @@
+# Rewritr
+
+> Smart, local, privacy-first text replacement Chrome extension. Free to use. No account required.
+
+## What is Rewritr?
+
+Rewritr is a Chrome browser extension that lets users find and replace text on any webpage. All processing happens locally in the browser — no data is ever sent to a server. It is free and open for personal use with a Pro tier planned.
+
+## Key capabilities
+
+- Find and replace text on any webpage using literal strings or regex patterns
+- Unicode-aware regex with capture group support ($1, $2, $0)
+- Per-rule flags: Case Sensitive (Cs), Regex mode (Rx), Whole Word (Ww), Smart Case (Sc)
+- "Replace only in contenteditable" toggle — restricts replacements to editable areas (Google Docs, Notion, Gmail, rich text editors) while leaving static page text untouched
+- Dynamic mode — MutationObserver watches for new DOM content and re-applies rules automatically (useful for SPAs, infinite scroll, live feeds)
+- Skip <pre> and <code> blocks independently
+- Bookmark / save named rule sets and reload them instantly
+- Import and export rules as JSON
+- Keyboard shortcut: Alt+Shift+F opens the popup from any tab
+- Supports 60+ languages including Latin, Cyrillic, CJK (Chinese/Japanese/Korean), Arabic, and Indic scripts
+
+## Privacy
+
+Rewritr collects zero personal data. No analytics, no telemetry, no network requests from the extension. Rules are stored in chrome.storage.sync (local/Google sync). The website is hosted on Cloudflare Pages.
+
+## Pages
+
+- Homepage: https://rewritr.app/
+- Documentation: https://rewritr.app/docs/
+- Support / FAQ: https://rewritr.app/support/
+- Changelog: https://rewritr.app/changelog/
+- Blog: https://rewritr.app/blog/
+- Privacy Policy: https://rewritr.app/privacy/
+
+## Blog posts
+
+- "How to bulk-replace text on any website without coding" — https://rewritr.app/blog/bulk-replace-text-browser.html
+- "Using regex in your browser to rewrite dynamic content" — https://rewritr.app/blog/regex-browser-text-replacement.html
+- "Best browser text replacement extensions in 2025" — https://rewritr.app/blog/best-text-replacement-extensions-2025.html
+
+## Author / contact
+
+Developed by Ashutosh Kumar Singh. Contact: ashutoshsingh5888@gmail.com

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — Rewritr</title>
+  <meta name="description" content="Full documentation for Rewritr Chrome extension. Learn about rules, flags, regex, bookmarks, import/export, and keyboard shortcuts." />
+  <link rel="canonical" href="https://rewritr.app/docs/" />
+  <meta property="og:title" content="Rewritr Documentation" />
+  <meta property="og:description" content="Complete guide to using Rewritr — the browser text replacement extension." />
+  <meta property="og:url" content="https://rewritr.app/docs/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Rewritr Documentation",
+    "description": "Complete documentation for the Rewritr Chrome extension.",
+    "author": { "@type": "Person", "name": "Ashutosh Kumar Singh" },
+    "publisher": { "@type": "Organization", "name": "Rewritr" }
+  }
+  </script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--surface); border: 1px solid var(--border2);
+      color: var(--text2); border-radius: 6px; padding: 4px 10px;
+      font-size: 11px; cursor: pointer; font-family: var(--font);
+      transition: all 0.15s;
+    }
+    .copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .flag-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .flag-table th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text3); padding: 8px 12px; border-bottom: 1px solid var(--border2); }
+    .flag-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text2); vertical-align: top; }
+    .flag-table td:first-child { font-family: var(--mono); color: var(--accent); font-size: 13px; white-space: nowrap; }
+    .callout {
+      background: rgba(108,99,255,0.08);
+      border: 1px solid rgba(108,99,255,0.2);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    .callout strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>
+    Rewritr
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/" class="active">Docs</a></li>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container">
+    <div class="with-sidebar">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Documentation navigation">
+        <div class="sidebar-section">
+          <h5>Getting Started</h5>
+          <ul>
+            <li><a href="#installation" class="active">Installation</a></li>
+            <li><a href="#quick-start">Quick start</a></li>
+            <li><a href="#interface">Interface overview</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <h5>Rules</h5>
+          <ul>
+            <li><a href="#rules-basic">Basic rules</a></li>
+            <li><a href="#flags">Flags (Cs, Rx, Ww, Sc)</a></li>
+            <li><a href="#regex">Regex mode</a></li>
+            <li><a href="#smart-case">Smart case</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <h5>Options</h5>
+          <ul>
+            <li><a href="#dynamic">Dynamic mode</a></li>
+            <li><a href="#contenteditable">Contenteditable toggle</a></li>
+            <li><a href="#skip-tags">Skip pre / code tags</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <h5>Advanced</h5>
+          <ul>
+            <li><a href="#bookmarks">Bookmarks</a></li>
+            <li><a href="#import-export">Import &amp; Export</a></li>
+            <li><a href="#shortcut">Keyboard shortcut</a></li>
+            <li><a href="#languages">Language support</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="prose" id="main-content">
+        <h1>Documentation</h1>
+        <p>Everything you need to get the most out of Rewritr. If something's missing, <a href="mailto:ashutoshsingh5888@gmail.com">email us</a> or check the <a href="../support/">support page</a>.</p>
+
+        <hr />
+
+        <h2 id="installation">Installation</h2>
+        <p>Rewritr is a Chrome extension available from the Chrome Web Store.</p>
+        <ol>
+          <li>Click <strong>Add to Chrome — Free</strong> on the <a href="/">homepage</a>.</li>
+          <li>In the confirmation dialog, click <strong>Add extension</strong>.</li>
+          <li>The Rewritr icon (<code>A→B</code>) will appear in your toolbar. Pin it for easy access.</li>
+        </ol>
+        <div class="callout"><strong>Permissions:</strong> Rewritr requests <code>storage</code>, <code>activeTab</code>, and <code>scripting</code>. It never accesses the network, never reads personal data, and all processing is local to your browser.</div>
+
+        <h2 id="quick-start">Quick start</h2>
+        <ol>
+          <li>Open any webpage you want to modify.</li>
+          <li>Click the Rewritr icon in the toolbar (or press <kbd>Alt+Shift+F</kbd>).</li>
+          <li>In the <strong>Phrase / Pattern</strong> column, type the text you want to find.</li>
+          <li>In the <strong>Rewrite to</strong> column, type what to replace it with.</li>
+          <li>Click <strong>▶ Apply</strong>.</li>
+        </ol>
+        <p>The page will update instantly. You can add as many rules as you need.</p>
+
+        <h2 id="interface">Interface overview</h2>
+        <p>The popup is divided into four areas:</p>
+        <ul>
+          <li><strong>Header</strong> — the Rewritr logo, the bookmark (🔖) button, the Apply button, and the Add Rule (＋) button.</li>
+          <li><strong>Global options</strong> — four toggles that apply to the entire replacement run.</li>
+          <li><strong>Rules table</strong> — each row is one find/replace pair with four flag buttons and a delete button.</li>
+          <li><strong>Footer</strong> — Import, Export, and Clear All buttons.</li>
+        </ul>
+
+        <hr />
+
+        <h2 id="rules-basic">Basic rules</h2>
+        <p>Each rule row has two inputs:</p>
+        <ul>
+          <li><strong>Phrase / Pattern</strong> — the text to search for. In regex mode this becomes a regex pattern.</li>
+          <li><strong>Rewrite to</strong> — the replacement text. In regex mode, use <code>$1</code>, <code>$2</code>… for capture groups and <code>$0</code> for the full match.</li>
+        </ul>
+        <p>Rules are applied top-to-bottom in the order they appear. Reorder by deleting and re-adding if needed (drag-to-reorder is on the Pro roadmap).</p>
+
+        <h2 id="flags">Flags</h2>
+        <p>Each rule has four optional flags you can toggle independently:</p>
+
+        <table class="flag-table">
+          <thead>
+            <tr><th>Flag</th><th>Label</th><th>What it does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cs</td><td>Case sensitive</td><td>Matches only the exact case you typed. Default is case-insensitive.</td></tr>
+            <tr><td>Rx</td><td>Regex mode</td><td>Treats the Phrase column as a Unicode-aware JavaScript regular expression. Enables capture group syntax in the replacement.</td></tr>
+            <tr><td>Ww</td><td>Whole word</td><td>Only matches the phrase when surrounded by non-letter/non-digit characters. Uses Unicode-aware word boundaries (<code>\p{L}</code>, <code>\p{N}</code>), not ASCII <code>\b</code>.</td></tr>
+            <tr><td>Sc</td><td>Smart case</td><td>Preserves the capitalisation pattern of the matched text. <code>Cloud → Fog</code>, <code>CLOUD → FOG</code>, <code>cloud → fog</code>.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout"><strong>Note:</strong> Ww (whole word) is ignored in Regex mode — use explicit boundary assertions like <code>(?&lt;![\p{L}\p{N}_])</code> in your pattern instead.</div>
+
+        <h2 id="regex">Regex mode</h2>
+        <p>When the <code>Rx</code> flag is active, the phrase is compiled as a <code>RegExp</code> with the <code>g</code> (global) and <code>u</code> (Unicode) flags automatically applied. The <code>i</code> flag is added unless <code>Cs</code> is also active.</p>
+        <p><strong>Capture group example:</strong></p>
+        <pre><code>Pattern:     (\d{4})-(\d{2})-(\d{2})
+Replacement: $3/$2/$1
+Result:      2025-03-15  →  15/03/2025</code></pre>
+
+        <p><strong>Invalid patterns</strong> are highlighted in red on the phrase input and silently skipped at apply time — they will not affect other rules.</p>
+
+        <h2 id="smart-case">Smart case</h2>
+        <p>Smart case (<code>Sc</code>) analyses the capitalisation of each individual match and mirrors it on the replacement:</p>
+        <ul>
+          <li><code>cloud → fog</code> (all lowercase)</li>
+          <li><code>Cloud → Fog</code> (title case)</li>
+          <li><code>CLOUD → FOG</code> (all uppercase)</li>
+        </ul>
+        <p>Smart case works in both literal and regex modes.</p>
+
+        <hr />
+
+        <h2 id="dynamic">Dynamic mode</h2>
+        <p>By default, Rewritr replaces text that exists in the DOM at the moment you click Apply. Dynamic mode uses a <code>MutationObserver</code> to keep watching the page and re-applies your rules whenever new content is added — useful for infinite scroll feeds, chat applications, and single-page apps that update the DOM after load.</p>
+        <div class="callout"><strong>Performance:</strong> Dynamic mode adds a debounced observer (120 ms delay). It is efficient for typical pages but may slow down very complex SPAs that mutate the DOM hundreds of times per second.</div>
+
+        <h2 id="contenteditable">Replace only in contenteditable</h2>
+        <p>When this toggle is <strong>on</strong>, Rewritr skips all static read-only page text and <em>only</em> modifies text inside elements with <code>contenteditable</code>, <code>role="textbox"</code>, or <code>role="document"</code>. This is perfect for rewriting inside:</p>
+        <ul>
+          <li>Google Docs / Google Slides</li>
+          <li>Notion pages</li>
+          <li>Email composers (Gmail, Outlook Web)</li>
+          <li>Any browser-based rich text editor</li>
+        </ul>
+        <p>When <strong>off</strong> (default), replacements run across static DOM text and form inputs but skip contenteditable areas.</p>
+
+        <h2 id="skip-tags">Skip &lt;pre&gt; and &lt;code&gt; tags</h2>
+        <p>These toggles prevent replacements from touching content inside <code>&lt;pre&gt;</code> (preformatted blocks) and <code>&lt;code&gt;</code> elements respectively. Useful when reading documentation or code-heavy pages where you want text replaced in prose but not in code samples.</p>
+
+        <hr />
+
+        <h2 id="bookmarks">Bookmarks (saved rule sets)</h2>
+        <p>Click the 🔖 icon in the header to open the bookmarks panel. You can:</p>
+        <ul>
+          <li><strong>Save current rules</strong> — click ＋ Save Current, enter a name, and the entire rule set plus your global options are saved.</li>
+          <li><strong>Load a set</strong> — click ⬇ Load next to any saved set to replace the current rules with that set.</li>
+          <li><strong>Delete a set</strong> — click × next to any entry.</li>
+        </ul>
+        <p>Bookmarks are stored in <code>chrome.storage.sync</code> and are automatically available across all your Chrome profiles if you are signed in to Chrome.</p>
+
+        <h2 id="import-export">Import &amp; Export</h2>
+        <p>Rewritr stores rules as JSON. You can export and import them to back up your configuration or share it with others.</p>
+        <p>The JSON format is:</p>
+        <pre><code>{
+  "rules": [
+    {
+      "id": 1234567890,
+      "phrase": "JavaScript",
+      "rewrite": "TypeScript",
+      "caseSensitive": false,
+      "regex": false,
+      "wholeWord": true,
+      "smartCase": false
+    }
+  ],
+  "options": {
+    "dynamic": false,
+    "skipPre": false,
+    "skipCode": false,
+    "replaceRich": false
+  },
+  "bookmarks": []
+}</code></pre>
+        <p>Import accepts any valid JSON file in this shape. Extra unknown keys are ignored.</p>
+
+        <h2 id="shortcut">Keyboard shortcut</h2>
+        <p>Rewritr registers <kbd>Alt+Shift+F</kbd> as the default shortcut to open the popup from any tab.</p>
+        <p>To change it, go to <code>chrome://extensions/shortcuts</code> in your browser, find Rewritr, and set a custom key.</p>
+
+        <h2 id="languages">Language support</h2>
+        <p>Rewritr is Unicode-first throughout:</p>
+        <ul>
+          <li>All regex patterns use the <code>u</code> flag.</li>
+          <li>Word boundary detection uses <code>\p{L}</code> and <code>\p{N}</code> Unicode property escapes.</li>
+          <li>Input fields carry <code>lang="mul"</code> to suppress incorrect spell-check corrections.</li>
+        </ul>
+        <p>This gives <strong>full support</strong> for Latin, Cyrillic, CJK, Arabic, Indic scripts, and more. See the <a href="../blog/best-text-replacement-extensions-2025.html">language support breakdown</a> for details on edge cases in German, Turkish, and Thai.</p>
+      </main>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="display:inline-flex">
+        <div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>
+        Rewritr
+      </a>
+      <p>Smart text replacement for your browser.</p>
+    </div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ashutosh Kumar Singh.</span>
+    <span>rewritr.app</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Rewritr</title>
+  <meta name="description" content="Rewritr privacy policy. Rewritr collects no personal data. All text processing is local to your browser." />
+  <link rel="canonical" href="https://rewritr.app/privacy/" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container" style="padding-top:60px;padding-bottom:80px">
+    <div class="prose">
+      <span class="badge badge-accent" style="margin-bottom:16px;display:inline-block">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p style="color:var(--text3);font-size:14px">Last updated: April 2025 · Effective immediately</p>
+
+      <hr />
+
+      <h2>The short version</h2>
+      <p><strong>Rewritr collects no personal data whatsoever.</strong> All text processing happens locally in your browser. No rules, no page content, no usage patterns, and no identifiable information are ever transmitted to any server.</p>
+
+      <h2>1. Who we are</h2>
+      <p>Rewritr is a Chrome browser extension developed and maintained by <strong>Ashutosh Kumar Singh</strong> (<a href="mailto:ashutoshsingh5888@gmail.com">ashutoshsingh5888@gmail.com</a>). The extension is accessible at <a href="https://rewritr.app">rewritr.app</a>.</p>
+
+      <h2>2. What data Rewritr does NOT collect</h2>
+      <p>Rewritr does not collect, store, transmit, or process:</p>
+      <ul>
+        <li>The content of any webpage you visit</li>
+        <li>The text you enter into rules (phrase or replacement fields)</li>
+        <li>Your browsing history or visited URLs</li>
+        <li>Personal identifiers (name, email, IP address, device ID)</li>
+        <li>Usage analytics or telemetry of any kind</li>
+        <li>Crash reports or error logs sent externally</li>
+      </ul>
+
+      <h2>3. What data is stored locally</h2>
+      <p>Rewritr stores the following data <strong>only on your own device</strong>, using the Chrome Extension Storage API (<code>chrome.storage.sync</code>):</p>
+      <ul>
+        <li>Your replacement rules (phrase, rewrite, and flag settings)</li>
+        <li>Global option settings (dynamic mode, skip tags, contenteditable toggle)</li>
+        <li>Bookmark / saved rule sets</li>
+      </ul>
+      <p>If you are signed into Chrome with a Google account, Chrome's built-in sync may replicate this data across your own devices. This syncing is performed by Google, governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>, and is entirely outside Rewritr's control. Rewritr has no access to this synced data.</p>
+
+      <h2>4. Permissions explained</h2>
+      <table>
+        <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
+        <tbody>
+          <tr><td><code>storage</code></td><td>To save your rules and settings between browser sessions.</td></tr>
+          <tr><td><code>activeTab</code></td><td>To access the content of the currently active tab when you click Apply.</td></tr>
+          <tr><td><code>scripting</code></td><td>To inject the replacement script into the page when you click Apply.</td></tr>
+          <tr><td><code>&lt;all_urls&gt;</code> host permission</td><td>Allows the content script to be pre-loaded on all pages so Dynamic mode can start observing immediately without a round-trip permission prompt.</td></tr>
+        </tbody>
+      </table>
+      <p>No permission grants network access and none is used to exfiltrate data.</p>
+
+      <h2>5. Third-party services</h2>
+      <p>The Rewritr extension itself uses no third-party SDKs, analytics packages, or external APIs. The Rewritr website (<a href="https://rewritr.app">rewritr.app</a>) is hosted on Cloudflare Pages. Cloudflare may collect standard server access logs (IP address, user agent, timestamp) as part of their hosting service. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> for details. The website also loads fonts from Google Fonts; see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+      <h2>6. Children's privacy</h2>
+      <p>Rewritr is not directed at children under the age of 13 and does not knowingly collect any information from children.</p>
+
+      <h2>7. Changes to this policy</h2>
+      <p>If this policy changes materially, we will update the "Last updated" date at the top of this page. Continued use of Rewritr after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>8. Contact</h2>
+      <p>Questions about this policy? Contact Ashutosh Kumar Singh at <a href="mailto:ashutoshsingh5888@gmail.com">ashutoshsingh5888@gmail.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="nav-logo" style="display:inline-flex"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a><p>Smart text replacement for your browser.</p></div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ashutosh Kumar Singh.</span><span>rewritr.app</span></div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

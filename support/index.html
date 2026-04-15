@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Rewritr</title>
+  <meta name="description" content="Get help with Rewritr. Browse frequently asked questions, troubleshooting guides, and contact the developer directly." />
+  <link rel="canonical" href="https://rewritr.app/support/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is Rewritr free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The core extension is completely free to use with no limits on rules."}},
+      {"@type":"Question","name":"Does Rewritr send my data anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing is local. No data is ever sent to any server."}},
+      {"@type":"Question","name":"Why isn't Rewritr replacing text on a page?","acceptedAnswer":{"@type":"Answer","text":"Some pages use Shadow DOM or iframe-isolated content that is not accessible to extensions. Try enabling Dynamic mode for SPAs."}},
+      {"@type":"Question","name":"How do I open Rewritr with a keyboard shortcut?","acceptedAnswer":{"@type":"Answer","text":"Press Alt+Shift+F. You can customise this at chrome://extensions/shortcuts."}}
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .faq-list { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 20px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: var(--surface); }
+    .faq-chevron { color: var(--text3); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 20px;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 20px 18px; }
+    .faq-a a { color: var(--accent); }
+    .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .contact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: var(--border2); }
+    .contact-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: var(--text2); margin-bottom: 16px; line-height: 1.55; }
+    @media (max-width: 600px) { .contact-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>
+    Rewritr
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/support/" class="active">Support</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container" style="padding-top:60px;padding-bottom:80px;max-width:800px">
+
+    <div class="section-label">Support</div>
+    <h1 class="section-title">How can we <em>help?</em></h1>
+    <p class="section-sub">Find answers to common questions below, or reach out directly.</p>
+
+    <!-- Search -->
+    <div class="search-bar" style="margin-top:28px" role="search">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.2"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <input type="search" placeholder="Search support articles…" id="faqSearch" aria-label="Search FAQ" />
+    </div>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title" style="font-size:22px;font-weight:500;letter-spacing:-0.02em;margin-top:48px;margin-bottom:4px">Frequently asked questions</h2>
+
+      <div class="faq-list" id="faqList">
+
+        <div class="faq-item" data-q="is rewritr free cost pricing">
+          <button class="faq-q" aria-expanded="false">Is Rewritr free? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Yes. The core extension is free forever with no rule limits and no account required. A Pro plan with extra features is coming soon — see the <a href="/#pricing">pricing page</a> for details.</div>
+        </div>
+
+        <div class="faq-item" data-q="data privacy tracking server sent">
+          <button class="faq-q" aria-expanded="false">Does Rewritr send my data anywhere? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">No. Every replacement runs entirely in your browser. Rewritr has no backend, no analytics, and no telemetry. Your rules are stored locally in <code>chrome.storage.sync</code> which syncs via Google's infrastructure if you are signed into Chrome — but Rewritr itself never sees that data.</div>
+        </div>
+
+        <div class="faq-item" data-q="not working replacement not happening page">
+          <button class="faq-q" aria-expanded="false">Why isn't Rewritr replacing text on a page? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">A few common causes:
+            <ul style="margin:10px 0 0 18px;display:flex;flex-direction:column;gap:6px">
+              <li><strong>Dynamic content:</strong> The page loads text after the initial render (infinite scroll, SPA routes). Enable <strong>Dynamic mode</strong> in the options.</li>
+              <li><strong>Shadow DOM:</strong> Some sites use Web Components with closed shadow roots that block extension access.</li>
+              <li><strong>iframes:</strong> Content inside cross-origin iframes is not accessible to extensions.</li>
+              <li><strong>Skip toggles:</strong> Check that "Skip &lt;pre&gt;" or "Skip &lt;code&gt;" aren't blocking what you need.</li>
+              <li><strong>Contenteditable toggle:</strong> If "Replace only in contenteditable" is ON, static text won't be replaced.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-q="keyboard shortcut open hotkey alt shift">
+          <button class="faq-q" aria-expanded="false">How do I open Rewritr with a keyboard shortcut? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Press <kbd style="background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:1px 6px;font-size:12px;font-family:var(--mono)">Alt+Shift+F</kbd> on any tab. To change this, go to <code>chrome://extensions/shortcuts</code>, find Rewritr, and set a custom key combination.</div>
+        </div>
+
+        <div class="faq-item" data-q="regex how to use pattern capture group">
+          <button class="faq-q" aria-expanded="false">How do I use regex patterns? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Enable the <strong>Rx</strong> flag on any rule. The phrase input becomes a full JavaScript regex (with the <code>u</code> Unicode flag always applied). In the replacement, use <code>$1</code>, <code>$2</code>… for capture groups and <code>$0</code> for the full match. Invalid patterns are highlighted in red and skipped. See the <a href="/docs/#regex">regex documentation</a> for examples.</div>
+        </div>
+
+        <div class="faq-item" data-q="google docs notion rich text contenteditable editor">
+          <button class="faq-q" aria-expanded="false">Can I replace text in Google Docs or Notion? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Yes. Enable the <strong>"Replace only in contenteditable"</strong> toggle in the global options. This restricts replacements to editable areas (Google Docs, Notion, Gmail, etc.) and leaves static page text untouched.</div>
+        </div>
+
+        <div class="faq-item" data-q="import export backup share rules json">
+          <button class="faq-q" aria-expanded="false">How do I back up or share my rules? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Click <strong>⬇ Export</strong> in the footer of the popup. This downloads a <code>text-rewriter-rules.json</code> file containing all your rules, options, and bookmarks. To restore on another machine, click <strong>⬆ Import</strong> and select that file.</div>
+        </div>
+
+        <div class="faq-item" data-q="bookmark save rule set named collection">
+          <button class="faq-q" aria-expanded="false">What are bookmarks / saved rule sets? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Bookmarks let you save your current set of rules under a name and reload them later. Click 🔖 in the header, then <strong>＋ Save Current</strong>. Great for switching between different workflows — e.g. a "work" set and a "personal" set.</div>
+        </div>
+
+        <div class="faq-item" data-q="other browser firefox safari edge">
+          <button class="faq-q" aria-expanded="false">Does Rewritr work on Firefox or Safari? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Currently Rewritr is Chrome-only. Firefox and Edge (Chromium) support is planned. Safari requires a separate build process and is on the roadmap. <a href="mailto:ashutoshsingh5888@gmail.com?subject=Rewritr — browser request">Let us know</a> which browser you need and we'll prioritise accordingly.</div>
+        </div>
+
+        <div class="faq-item" data-q="multilingual hindi arabic japanese chinese language support">
+          <button class="faq-q" aria-expanded="false">Which languages does Rewritr support? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a" role="region">Rewritr has full support for 60+ languages including all Latin scripts, Cyrillic, CJK (Chinese/Japanese/Korean), Arabic, and Indic scripts (Hindi, Tamil, Bengali, etc.). See the <a href="/docs/#languages">language documentation</a> for a full breakdown.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section style="margin-top:64px" aria-labelledby="contact-title">
+      <h2 id="contact-title" style="font-size:22px;font-weight:500;letter-spacing:-0.02em;margin-bottom:4px">Still need help?</h2>
+      <p style="color:var(--text2);font-size:15px">Can't find what you're looking for? Get in touch directly.</p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <h3>📧 Email support</h3>
+          <p>Send a detailed description of your issue and we'll get back to you within 48 hours.</p>
+          <a href="mailto:ashutoshsingh5888@gmail.com?subject=Rewritr Support" class="btn btn-outline btn-sm">Send email</a>
+        </div>
+        <div class="contact-card">
+          <h3>📖 Read the docs</h3>
+          <p>The full documentation covers every feature, flag, and option in depth.</p>
+          <a href="/docs/" class="btn btn-outline btn-sm">Open docs</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="display:inline-flex"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a>
+      <p>Smart text replacement for your browser.</p>
+    </div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ashutosh Kumar Singh.</span><span>rewritr.app</span></div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  // FAQ search filter
+  document.getElementById('faqSearch').addEventListener('input', function () {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const text = (item.dataset.q + ' ' + item.textContent).toLowerCase();
+      item.style.display = text.includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

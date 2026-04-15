@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rewritr Blog</title>
+    <link>https://rewritr.app/blog/</link>
+    <description>Tips, tutorials, and deep dives on browser text replacement, regex, and productivity.</description>
+    <language>en-us</language>
+    <managingEditor>ashutoshsingh5888@gmail.com (Ashutosh Kumar Singh)</managingEditor>
+    <atom:link href="https://rewritr.app/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Best browser text replacement extensions in 2025</title>
+      <link>https://rewritr.app/blog/best-text-replacement-extensions-2025.html</link>
+      <description>We compared every find-and-replace Chrome extension available. Here's how they stack up on features, privacy, and real-world performance.</description>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rewritr.app/blog/best-text-replacement-extensions-2025.html</guid>
+    </item>
+
+    <item>
+      <title>Using regex in your browser to rewrite dynamic content</title>
+      <link>https://rewritr.app/blog/regex-browser-text-replacement.html</link>
+      <description>Regex isn't just for developers. This guide demystifies capture groups and substitution patterns for real browsing tasks.</description>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://rewritr.app/blog/regex-browser-text-replacement.html</guid>
+    </item>
+
+    <item>
+      <title>How to bulk-replace text on any website without coding</title>
+      <link>https://rewritr.app/blog/bulk-replace-text-browser.html</link>
+      <description>A practical walkthrough of setting up Rewritr rules to automate repetitive text changes across your daily browsing.</description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rewritr.app/blog/bulk-replace-text-browser.html</guid>
+    </item>
+
+  </channel>
+</rss>

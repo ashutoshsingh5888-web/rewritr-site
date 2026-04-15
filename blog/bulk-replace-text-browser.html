@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to bulk-replace text on any website without coding — Rewritr Blog</title>
+  <meta name="description" content="A step-by-step guide to setting up Rewritr rules for bulk text replacement across any website. No programming experience needed." />
+  <link rel="canonical" href="https://rewritr.app/blog/bulk-replace-text-browser.html" />
+  <meta property="og:title" content="How to bulk-replace text on any website without coding" />
+  <meta property="og:description" content="A practical walkthrough of setting up Rewritr rules to automate repetitive text changes across your daily browsing." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rewritr.app/blog/bulk-replace-text-browser.html" />
+  <meta name="author" content="Ashutosh Kumar Singh" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to bulk-replace text on any website without coding",
+    "description": "A step-by-step guide to bulk text replacement in the browser using Rewritr.",
+    "author": { "@type": "Person", "name": "Ashutosh Kumar Singh", "email": "ashutoshsingh5888@gmail.com" },
+    "publisher": { "@type": "Organization", "name": "Rewritr", "url": "https://rewritr.app" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-04-01",
+    "mainEntityOfPage": "https://rewritr.app/blog/bulk-replace-text-browser.html"
+  }
+  </script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding: 60px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+    .blog-back { font-size: 13px; color: var(--text3); display: inline-flex; align-items: center; gap: 5px; margin-bottom: 24px; transition: color 0.15s; }
+    .blog-back:hover { color: var(--text2); }
+    .blog-byline { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .blog-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,var(--accent),var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: #fff; flex-shrink: 0; }
+    .blog-byline-info p { font-size: 13px; color: var(--text3); }
+    .blog-byline-info strong { font-size: 14px; color: var(--text); }
+    .copy-btn { position: absolute; top: 10px; right: 10px; background: var(--surface); border: 1px solid var(--border2); color: var(--text2); border-radius: 6px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+    .copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .tip { background: rgba(67,233,123,0.07); border: 1px solid rgba(67,233,123,0.2); border-radius: var(--radius); padding: 14px 18px; margin: 20px 0; font-size: 14px; color: var(--text2); line-height: 1.6; }
+    .tip strong { color: #43e97b; }
+    .post-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .post-nav a { font-size: 14px; color: var(--text2); transition: color 0.15s; }
+    .post-nav a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a>
+  <ul class="nav-links" role="list">
+    <li><a href="/docs/">Docs</a></li>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#install" class="nav-cta">Install Free</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto">
+
+      <div class="blog-hero">
+        <a href="/blog/" class="blog-back">← All posts</a>
+        <div style="display:flex;gap:10px;margin-bottom:16px">
+          <span class="tag">Guide</span>
+          <span class="tag">Beginner</span>
+        </div>
+        <h1 class="prose" style="font-size:clamp(28px,5vw,44px);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px">How to bulk-replace text on any website without coding</h1>
+        <p style="font-size:17px;color:var(--text2);line-height:1.65;max-width:620px;font-weight:300">A practical walkthrough of setting up Rewritr rules to automate repetitive text changes across your daily browsing — no programming experience needed.</p>
+        <div class="blog-byline">
+          <div class="blog-avatar">AK</div>
+          <div class="blog-byline-info">
+            <strong>Ashutosh Kumar Singh</strong>
+            <p>January 15, 2025 · 5 min read</p>
+          </div>
+        </div>
+      </div>
+
+      <article class="prose">
+        <p>If you've ever found yourself mentally substituting words while reading a webpage — replacing a company name, correcting a repeated typo, or swapping one term for a preferred alternative — you already know why bulk text replacement in the browser is useful.</p>
+
+        <p>Rewritr lets you do exactly this: set up rules once, and apply them to any page in one click. No code. No configuration files. No developer tools. Here's how.</p>
+
+        <h2>Step 1: Install Rewritr</h2>
+        <p>Go to the <a href="https://rewritr.app">Rewritr homepage</a> and click <strong>Add to Chrome — Free</strong>. The extension installs in seconds and adds an <code>A→B</code> icon to your toolbar. Pin it for easy access.</p>
+
+        <div class="tip"><strong>Tip:</strong> You can open Rewritr from any tab using the keyboard shortcut <kbd>Alt+Shift+F</kbd> — much faster than clicking the toolbar icon.</div>
+
+        <h2>Step 2: Open the popup and add your first rule</h2>
+        <p>Click the Rewritr icon on any webpage. You'll see one empty rule row waiting for input.</p>
+        <ol>
+          <li>Click the <strong>Phrase / Pattern</strong> field (left column) and type the text you want to find.</li>
+          <li>Click the <strong>Rewrite to</strong> field (right column) and type the replacement text.</li>
+          <li>Click <strong>▶ Apply</strong>.</li>
+        </ol>
+        <p>That's it. The page updates instantly with every occurrence replaced.</p>
+
+        <h2>Step 3: Add multiple rules at once</h2>
+        <p>The real power of Rewritr is running many replacements in a single Apply. Click <strong>＋</strong> in the header to add more rows. Each rule runs independently, top to bottom.</p>
+        <p>A practical example: you're reading a competitor's product documentation and want to mentally map their terminology to your own company's:</p>
+        <pre><code>Phrase         → Rewrite to
+─────────────────────────────
+WorkspaceX     → My Company
+Channels       → Spaces
+Bots           → Automations
+Reactions      → Emoji responses</code></pre>
+        <p>Click Apply once and the entire page reflects your vocabulary.</p>
+
+        <h2>Step 4: Use flags for precision</h2>
+        <p>Each rule has four optional flags to control how matching works:</p>
+        <ul>
+          <li><strong>Cs (Case Sensitive)</strong> — match only the exact case. Useful when you want to replace "API" but not "api".</li>
+          <li><strong>Ww (Whole Word)</strong> — only replace when the phrase is a complete word. This prevents replacing "Java" inside "JavaScript" — probably the most commonly needed flag.</li>
+          <li><strong>Sc (Smart Case)</strong> — preserve the capitalisation pattern of the original. Replace "Cloud" → "Sky" and "CLOUD" → "SKY" automatically.</li>
+        </ul>
+
+        <div class="tip"><strong>Real example:</strong> Replacing "Java" → "Javad" without the <strong>Ww</strong> flag would turn "JavaScript" into "Javadscript". With Ww on, only standalone instances of "Java" are touched.</div>
+
+        <h2>Step 5: Save your rules as a bookmark</h2>
+        <p>Once you've built a useful set of rules, you can save it as a named bookmark so you don't have to re-enter it next time.</p>
+        <ol>
+          <li>Click the 🔖 icon in the popup header.</li>
+          <li>Click <strong>＋ Save Current</strong>.</li>
+          <li>Give the set a name (e.g. "Competitor docs", "Work jargon", "Proofreading").</li>
+        </ol>
+        <p>To reload a saved set later, open the bookmarks panel and click <strong>⬇ Load</strong>.</p>
+
+        <h2>Step 6: Enable Dynamic mode for live pages</h2>
+        <p>Some pages load content dynamically — news feeds, social media timelines, infinite scroll lists, and single-page apps. After you click Apply, new content that loads won't be automatically replaced.</p>
+        <p>Enable the <strong>Replace on page changes (dynamic)</strong> toggle at the top of the popup, then Apply. Rewritr will keep watching the page and apply your rules to any new content as it appears.</p>
+
+        <h2>Practical use cases</h2>
+        <ul>
+          <li><strong>Reading privacy:</strong> Replace real names with pseudonyms on public sites you screenshot and share.</li>
+          <li><strong>Vocabulary mapping:</strong> Translate competitor jargon into your own company's terminology while reading docs.</li>
+          <li><strong>Editing while reading:</strong> Catch and fix your own repeated typos on drafts open in a CMS or Google Docs.</li>
+          <li><strong>Personalisation:</strong> Replace generic placeholder names in tutorials ("Lorem Ipsum Corp") with something more meaningful.</li>
+          <li><strong>Accessibility:</strong> Replace uncommon abbreviations with expanded forms on sites that don't annotate them.</li>
+        </ul>
+
+        <h2>Exporting and sharing rules</h2>
+        <p>To back up your rules or share them with a colleague, click <strong>⬇ Export</strong> at the bottom of the popup. This downloads a <code>.json</code> file that can be imported on any Chrome installation with Rewritr.</p>
+
+        <h2>Summary</h2>
+        <p>Rewritr's core workflow is three steps: add rules, click Apply, done. The flags give you precision without complexity, bookmarks give you persistence, and Dynamic mode handles pages that keep loading. No programming required — just type, click, and the page rewrites itself.</p>
+
+        <p><a href="https://rewritr.app/#install">Install Rewritr free</a> and try it on the next documentation page you read.</p>
+
+        <div class="post-nav">
+          <span></span>
+          <a href="regex-browser-text-replacement.html">Next: Using regex in your browser →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="nav-logo" style="display:inline-flex"><div class="nav-logo-mark"><span class="nav-logo-a">A</span><span class="nav-logo-arr">→</span><span class="nav-logo-b">B</span></div>Rewritr</a><p>Smart text replacement for your browser.</p></div>
+    <div class="footer-col"><h4>Product</h4><ul><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/changelog/">Changelog</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/docs/">Docs</a></li><li><a href="/support/">Support</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:ashutoshsingh5888@gmail.com">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ashutosh Kumar Singh.</span><span>rewritr.app</span></div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
